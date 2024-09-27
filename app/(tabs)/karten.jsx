@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -41,10 +41,16 @@ const Karte = () => {
       <TouchableWithoutFeedback onPress={flipKarte}>
         <View>
           <Animated.View style={[styles.karte, vorderseiteStyle]}>
-            <Text style={styles.text}>Frage: Was ist die Hauptstadt von Deutschland?</Text>
+          <Image
+              source={require('../KartenBilder/frage1.png')}  // Lokales Bild
+              style={{ width: 300, height: 200 }}  // Setze die gewünschte Bildgröße
+            />
           </Animated.View>
           <Animated.View style={[styles.karte, styles.rueckseite, rueckseiteStyle]}>
-            <Text style={styles.text}>Antwort: rwtjdgfvafohmäfghflfmhfmhf </Text>
+          <Image
+              source={require('../KartenBilder/antwort1.png')}  // Lokales Bild
+              style={{ width: 300, height: 200 }}  // Setze die gewünschte Bildgröße
+            />
           </Animated.View>
         </View>
       </TouchableWithoutFeedback>
@@ -53,6 +59,7 @@ const Karte = () => {
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
     width: 300,
@@ -60,12 +67,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   karte: {
-    position: 'absolute',
-    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    width: '150%',
     height: 200,
-    backgroundColor: '#fff',
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    backgroundColor: '#fff',
+    alignContent: 'space-around',
   },
   rueckseite: {
     position: 'absolute',
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: 'auto',
   },
   versucheText: {
     marginTop: 210,
