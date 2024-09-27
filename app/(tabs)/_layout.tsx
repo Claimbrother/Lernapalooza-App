@@ -12,8 +12,17 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        headerShown: true,
       }}>
+      <Tabs.Screen
+        name="karten"
+        options={{
+          title: 'Karten',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
@@ -28,10 +37,10 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'body' : 'body-outline'} color={color} />
           ),
         }}
-      />
+      />    
     </Tabs>
   );
 }
