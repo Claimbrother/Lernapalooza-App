@@ -43,13 +43,13 @@ const Karte = () => {
           <Animated.View style={[styles.karte, vorderseiteStyle]}>
           <Image
               source={require('../KartenBilder/frage1.png')}  // Lokales Bild
-              style={{ width: 300, height: 200 }}  // Setze die gewünschte Bildgröße
+              style={{ width: 400, height: 300 }}  // Setze die gewünschte Bildgröße
             />
           </Animated.View>
           <Animated.View style={[styles.karte, styles.rueckseite, rueckseiteStyle]}>
           <Image
               source={require('../KartenBilder/antwort1.png')}  // Lokales Bild
-              style={{ width: 300, height: 200 }}  // Setze die gewünschte Bildgröße
+              style={{ width: 400, height: 300 }}  // Setze die gewünschte Bildgröße
             />
           </Animated.View>
         </View>
@@ -61,34 +61,24 @@ const Karte = () => {
 
 
 const styles = StyleSheet.create({
-  container: {
-    width: 300,
-    height: 250,
-    alignItems: 'center',
-  },
+container : {
+  flex: 2,
+  justifyContent: 'center',
+  alignItems: 'center'
+},
+
   karte: {
     display: 'flex',
-    alignItems: 'center',
-    width: '150%',
-    height: 200,
     justifyContent: 'center',
-    backgroundColor: '#fff',
-    alignContent: 'space-around',
   },
   rueckseite: {
     position: 'absolute',
-    width: '100%',
-    height: 200,
-    backgroundColor: '#e0e0e0',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
-    fontSize: 18,
-    textAlign: 'auto',
-  },
+  
   versucheText: {
-    marginTop: 210,
+    marginTop: 20,
     fontSize: 16,
   },
 });
